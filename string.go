@@ -30,3 +30,7 @@ func (str *String) Load() string {
 	}
 	return ""
 }
+
+func (str *String) String() string {
+	return str.Load()
+}

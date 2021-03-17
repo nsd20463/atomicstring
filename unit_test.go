@@ -15,10 +15,16 @@ func TestString(t *testing.T) {
 	if s.Load() != "" {
 		t.Error(`Load(Store("")) != ""`)
 	}
+	if s.String() != "" {
+		t.Error(`Store("").String() != ""`)
+	}
 
 	s.Store("abc")
 	if s.Load() != "abc" {
 		t.Error(`Load(Store("abc")) != "abc"`)
+	}
+	if s.String() != "abc" {
+		t.Error(`Store("abc").String() != "abc"`)
 	}
 
 	s.Store("123")
